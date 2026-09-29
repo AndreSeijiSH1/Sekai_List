@@ -1,2 +1,11 @@
-h1 { color: red;}
-h2 { color: rgb(0, 98, 255);}
+/*--------------------------Box Model-----------------------------------------
+padding é o espaço interno, entre o conteúdo e a caixa        padding
+border é a borda visível ou invisivel da caixa                border
+margin espaço externo entre esta caixa e as caixas vizinhas   margin 
+width e height texto ou elementos filhos 
+-----------------------------------------------------------------------------*/
+/*Por padrão o CSS aplica os estilos de forma automática nas tags HTML por causa do navegador que coloca, 
+agr estamos zerando a margem para editar ela dps com o nosso próprio CSS*/
+body{
+    margin: 0;
+}
