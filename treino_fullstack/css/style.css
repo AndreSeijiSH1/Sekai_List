@@ -4,8 +4,73 @@ border é a borda visível ou invisivel da caixa                border
 margin espaço externo entre esta caixa e as caixas vizinhas   margin 
 width e height texto ou elementos filhos 
 -----------------------------------------------------------------------------*/
-/*Por padrão o CSS aplica os estilos de forma automática nas tags HTML por causa do navegador que coloca, 
+
+/* O * é o seletor universal onde seleciona todos os elementos da página, sua estrutura ficarira assim:
+* {box-sizing: border-box}*/
+
+/*------------------------------------------Content-box e border-box-------------------------------------------------------
+No content box a sua estrtura é width, padding e border, e para calcular qual o tamanho desse card vamos fazer assim:
+width: 200
+padding: 20 (vai ocupar 20px em cada lado)
+border: 2 (vai ocupar 2px em cada lado)
+total seria: 200 + 20 + 20 + 2 + 2 = 244px nesse card
+
+No border-box o conceito é mais diferente, se vc definir que essa caixa tem 200px então essa caixa inteira vai ter 200px, 
+mas fique sabendo da conta que acontece no content-box
+--------------------------------------------------------------------------------------------------------------------------*/
+
+/* Digamos que ela será a primeira regra do nosso CSS, ela será a fundação que definirá o tamanho das caixas*/
+* {box-sizing: border-box;}
+
+
+/* :root = a raiz do documento (o <html>). Variáveis declaradas aqui valem para a página toda */
+:root {
+    --cor-fundo-topo: #1b263b;   /* o "--" no começo é o que marca uma variável */
+    --cor-fundo-baixo: #415a77;
+    --cor-destaque: #f5c518;
+    --cor-botao: #5aa9e6;
+    --cor-card: #f4f6fb;
+    --cor-texto: #e0d4d4;
+    --padding-padrao: 16px;
+}
+
+/*Por padrão o navegador aplica os estilos de forma automática nas tags HTML, 
 agr estamos zerando a margem para editar ela dps com o nosso próprio CSS*/
 body{
+    background-color: var(--cor-fundo-baixo);
     margin: 0;
+    /*Isso que estamos fazendo é a herança, tudo que está dentro do header será afetado, na mesma coisa com o main ou body*/
+    color: var(--cor-texto);
 }
+
+* a {
+    color: var(--cor-texto);
+}
+
+/*Agrupmaento
+h1, h2, h3 { color: var(--cor-texto);
+O agrupamento é um atalho de escrita
+*/
+header{ 
+    background-color: var(--cor-fundo-topo);
+    padding: var(--padding-padrao);
+    
+}
+
+
+main{
+    padding: var(--padding-padrao);
+}
+
+footer{
+    padding: var(--padding-padrao);
+}
+/*---------------------------------------flexbox------------------------------------------------
+Organiza os elementos em uma dimensão, sendo uma ferramenta que permite redimensionar o itens
+dentro desse espaço disponível
+------------------------------------------------------------------------------------------------*/
+nav ul{ /*Isso aqui é um container, a regra é de ul dentro de uma nav será aplicado tal coisa*/
+    display: flex;
+    list-style: none;
+}
+
