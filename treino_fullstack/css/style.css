@@ -72,5 +72,24 @@ dentro desse espaço disponível
 nav ul{ /*Isso aqui é um container, a regra é de ul dentro de uma nav será aplicado tal coisa*/
     display: flex;
     list-style: none;
+    padding: 0px;
+    margin: 0px;
+    gap: 24px; /*cria um espaço entre os itens*/
+}
+.topo{
+    display: flex; /*display chama o flexbox*/
+    align-items: center; /*eixo cruzado: centralizamos na vertical*/
+    justify-content: space-between; /*eixo principal: um em cada ponta*/
 }
 
+.temporada{
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.noticias{
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
