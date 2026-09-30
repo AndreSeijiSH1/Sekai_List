@@ -43,10 +43,17 @@ body{
     color: var(--cor-texto);
 }
 
+/*--------------------------------------------- Style das Anchors------------------------*/
+a:hover, a:focus-visible{ /*Seleciona o elemento apenas quando o mouse está encima dele*/
+    color: var(--cor-destaque);
+}
+a:hover, a:focus-visible{ /*Para pessoas que usam tab e não possuem mouse*/
+    color: var(--cor-destaque);
+}
 * a {
     color: var(--cor-texto);
 }
-
+/*-------------------------------------------------------------------------------------------*/
 /*Agrupmaento
 h1, h2, h3 { color: var(--cor-texto);
 O agrupamento é um atalho de escrita
@@ -54,7 +61,6 @@ O agrupamento é um atalho de escrita
 header{ 
     background-color: var(--cor-fundo-topo);
     padding: var(--padding-padrao);
-    
 }
 
 
@@ -65,6 +71,7 @@ main{
 footer{
     padding: var(--padding-padrao);
 }
+
 /*---------------------------------------flexbox------------------------------------------------
 Organiza os elementos em uma dimensão, sendo uma ferramenta que permite redimensionar o itens
 dentro desse espaço disponível
@@ -74,7 +81,8 @@ nav ul{ /*Isso aqui é um container, a regra é de ul dentro de uma nav será ap
     list-style: none;
     padding: 0px;
     margin: 0px;
-    gap: 24px; /*cria um espaço entre os itens*/
+    gap: 8px 24px; /*cria um espaço entre os itens, o primeiro é entre linhas e o segundo é entre colunas*/
+    flex-wrap: wrap;
 }
 .topo{
     display: flex; /*display chama o flexbox*/
@@ -87,9 +95,16 @@ nav ul{ /*Isso aqui é um container, a regra é de ul dentro de uma nav será ap
     gap: 24px;
     flex-wrap: wrap;
 }
+.temporada article{
+    width: 225px;
+
+}
 
 .noticias{
-    display: flex;
     gap: 24px;
     flex-wrap: wrap;
+}
+* img{
+    max-width: 100%; /* nunca mais larga que o pai */
+    height: auto; /* a altura acompanha, para a imagem não ficar achatada */
 }
