@@ -52,6 +52,7 @@ a:hover, a:focus-visible{ /*Para pessoas que usam tab e não possuem mouse*/
 }
 * a {
     color: var(--cor-texto);
+    text-decoration: none; /*Tira o sublinhado*/
 }
 /*-------------------------------------------------------------------------------------------*/
 /*Agrupmaento
@@ -107,4 +108,7 @@ nav ul{ /*Isso aqui é um container, a regra é de ul dentro de uma nav será ap
 * img{
     max-width: 100%; /* nunca mais larga que o pai */
     height: auto; /* a altura acompanha, para a imagem não ficar achatada */
+}
+.temporada article a{
+    display: block; /*Faz um contorno em volta do card todo*/
 }
