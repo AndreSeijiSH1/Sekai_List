@@ -29,9 +29,10 @@ mas fique sabendo da conta que acontece no content-box
     --cor-fundo-baixo: #415a77;
     --cor-destaque: #f5c518;
     --cor-botao: #5aa9e6;
-    --cor-card: #f4f6fb;
+    --cor-card: #213464;
     --cor-texto: #e0d4d4;
     --padding-padrao: 16px;
+    
 }
 
 /*Por padrão o navegador aplica os estilos de forma automática nas tags HTML, 
@@ -95,6 +96,7 @@ nav ul{ /*Isso aqui é um container, a regra é de ul dentro de uma nav será ap
     display: flex;
     gap: 24px;
     flex-wrap: wrap;
+    color: var(--cor-card);
 }
 .temporada article{
     width: 225px;
