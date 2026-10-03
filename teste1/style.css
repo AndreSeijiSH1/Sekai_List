@@ -1,0 +1,82 @@
+/*Primeiras configurações*/
+* {box-sizing: border-box;}
+
+:root {
+    --cor-laranja: #ff640a; 
+    --cor-laranja-claro: #f58342;
+    --cor-preto: #000000;
+    --cor-branco: #ffffff;
+    --padding-padrao: 16px;
+    --fonte-arial:Arial, Helvetica, sans-serif;
+}
+
+body{
+    margin: 0;
+    background-color: var(--cor-preto);
+    color: var(--cor-branco);
+    font-family: var(--fonte-arial);
+}
+header{ 
+    padding: var(--padding-padrao);
+}
+
+main{
+    padding: var(--padding-padrao);
+}
+/*-----------------------------------------------------------------------*/
+* a{
+    text-decoration: none;
+    color: var(--cor-branco);
+}
+a:hover, a:focus-visible{
+background-color: var(--cor-laranja-claro);
+color: var(--cor-preto);
+}
+
+.topo{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.login-teste_gratis {
+    display: flex;
+    gap: 8px;
+}
+.botao-laranja{
+    background-color: var(--cor-laranja);
+    color: var(--cor-preto);
+    border-radius: 999px;
+    display: inline-block;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.botao-branco{
+    border: 2px solid var(--cor-branco);
+    background-color: transparent;
+    color: var(--cor-branco);
+    border-radius: 999px;
+    display: inline-block;
+    font-weight: bold;
+    padding: 12px 24px;
+}
+
+/* padrão: todo botão da pílula começa "desligado" */
+.botao-assinatura button {
+    background-color: transparent;
+    border-radius: 999px;
+    display: inline-block;
+    font-weight: bold;
+    padding: 12px 24px;
+}
+
+/* exceção: só o botão ligado fica laranja */
+.botao-assinatura [aria-pressed="true"] {
+    background-color: var(--cor-laranja);
+    color: var(--cor-preto);
+}
+.botao-assinatura [aria-pressed="false"] {
+    color: var(--cor-branco);
+    font-weight: bolder;
+}
