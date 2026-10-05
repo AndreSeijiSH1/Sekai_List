@@ -71,6 +71,13 @@ justify-content: space-between;
     padding: 12px 24px;
 }
 
+.botao-assinatura{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:16px 10px;
+}
+
 /* exceção: só o botão ligado fica laranja */
 .botao-assinatura [aria-pressed="true"] {
     background-color: var(--cor-laranja);
@@ -79,4 +86,20 @@ justify-content: space-between;
 .botao-assinatura [aria-pressed="false"] {
     color: var(--cor-branco);
     font-weight: bolder;
+}
+
+.plano-assinatura{
+    display: flex;
+    gap: 16px 13px;
+    justify-content: center;
+}
+.plano-fan{
+    border: 2px solid var(--cor-laranja);
+    padding: 16px;
+    border-radius: 15px;
+}
+.plano-mega{
+    border: 2px solid var(--cor-laranja);
+    padding: 16px;
+    border-radius: 15px;
 }
