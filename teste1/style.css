@@ -33,16 +33,39 @@ background-color: var(--cor-laranja-claro);
 color: var(--cor-preto);
 }
 
+/* cada section ganha respiro em cima e embaixo, por dentro */
+section {
+    padding: 300px 0;   /* 64px em cima e embaixo | 0 nas laterais */
+}
+
+/*
+        <div class="topo"> <!--Topo da página-->
+            <h1><a href="#">Crunchyroll</a></h1>
+            <div class="login-teste_gratis">
+                <a href="#" class="botao-branco">LOGIN</a>
+                <a href="#" class="botao-laranja">INICIAR TESTE GRÁTIS</a>
+            </div>
+        </div>
+*/
 .topo{
 display: flex;
 align-items: center;
 justify-content: space-between;
 }
 
-.login-teste_gratis {
-    display: flex;
-    gap: 8px;
+
+/*
+        <section class="teste-gratis">
+            <h2>A maior coleção de Anime sob demanda do mundo</h2>
+            <p>junte-se ao Crunchyroll e descubra o mundo do Anime</p>
+            <a href="#" class="botao-laranja">INICIAR TESTE GRÁTIS</a>
+        </section>
+*/
+.teste-gratis{
+    text-align: center;
 }
+
+/*Personalizando propriedades do botão laranja que ficaria espalhado por todo o site*/
 .botao-laranja{
     background-color: var(--cor-laranja);
     color: var(--cor-preto);
@@ -50,8 +73,9 @@ justify-content: space-between;
     display: inline-block;
     font-weight: bold;
     padding: 15px;
+    border: none;
 }
-
+/*Personalizando propriedades do botão laranja que ficaria espalhado por todo o site*/
 .botao-branco{
     border: 2px solid var(--cor-branco);
     background-color: transparent;
@@ -69,15 +93,25 @@ justify-content: space-between;
     display: inline-block;
     font-weight: bold;
     padding: 12px 24px;
+    border: none;
+
 }
 
+/*<div class="botao-assinatura">
+    <button type="button" aria-pressed="true">Mensal</button>
+    <button type="button" aria-pressed="false">Anual economize 40%</button>
+</div>*/
 .botao-assinatura{
     display: flex;
     align-items: center;
     justify-content: center;
     gap:16px 10px;
+    border: 2px solid var(--cor-laranja);
+    border-radius: 30px;
+    padding: 5px;
+    width: fit-content;   /*A caixa fica do tamanho exato do conteúdo*/
+    margin: 0 auto 42px;
 }
-
 /* exceção: só o botão ligado fica laranja */
 .botao-assinatura [aria-pressed="true"] {
     background-color: var(--cor-laranja);
@@ -88,18 +122,72 @@ justify-content: space-between;
     font-weight: bolder;
 }
 
+/*Aqui vai configurar as 2 assinaturas fan e mega de uma vez*/
 .plano-assinatura{
     display: flex;
     gap: 16px 13px;
     justify-content: center;
 }
+/*
+<article class="plano-fan">
+                     <!-----------------------------------Plano Fan----------------------------------------->
+                    <h3 class="plano-nome">Fan</h3>
+                    <p class="plano-preco">R$ 19,90/mês</p>
+                    <p class="plano-taxa-imposto">taxas + impostos</p>
+                    <a href="#" class="plano-teste">Comece Um Teste Grátis De 7 Dias</a>
+                    <a href="#" class="pular-teste">Pular Teste Gratuito</a>
+
+                    <ul class="lista-beneficios">
+                        <li>Sem anúncios</li>
+                        <li>Acesso completo ao acervo da Crunchyroll</li>
+                        <li>Novos episódios logo após a exibição no Japão</li>
+                        <li>Assista em um total de <strong>1 devide</strong> simultaneamente</li>
+                        <li>Offline Viewing</li>
+                    </ul>
+                </article>
+*/
 .plano-fan{
     border: 2px solid var(--cor-laranja);
     padding: 16px;
     border-radius: 15px;
 }
+
+/*
+            <article class="plano-mega"> 
+                    <!---------------------------------Plano Mega fan----------------------------------------->
+                    <span class="plano-destaque">O MAIS POPULAR</span>
+                    <h3 class="plano-nome">Mega Fan</h3>
+                    <p class="plano-preco">R$24,90/mês</p>
+                    <p class="plano-taxa-imposto">taxas + impostos</p>
+                    <a href="#" class="plano-teste">Comece Um Teste Grátis De 7 Dias</a>
+                    <a href="#" class="pular-teste">Pular Teste Gratuito</a>
+                    
+                    <ul class="lista-beneficios">
+                        <li>Sem anúncios</li>
+                        <li>Acesso completo ao acervo da Crunchyroll</li>
+                        <li>Novos episódios logo após a exibição no Japão</li>
+                        <li>Assista em um total de <strong>4 devices</strong> simultaneamente</li>
+                        <li>Offline Viewing</li>
+                        <li>Acesse o Crunchyroll Game Vault</li>
+                    </ul>
+                </article>
+*/
 .plano-mega{
     border: 2px solid var(--cor-laranja);
     padding: 16px;
     border-radius: 15px;
+}
+
+
+.escolher-assinatura{
+    text-align: center;
+}
+
+.escolher-assinatura h2{
+    margin-bottom: 32px;
+}
+.lista-beneficios{
+    list-style: none;
+    text-align: left;
+    padding: 0;
 }
