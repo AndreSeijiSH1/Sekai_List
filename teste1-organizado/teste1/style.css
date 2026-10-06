@@ -202,7 +202,7 @@ section {
 }
 
 .plano-preco {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: bolder;
 }
 .plano-taxa-imposto{
@@ -226,7 +226,12 @@ section {
     border: 2px solid var(--cor-laranja);
     border-radius: 30px;
     font-weight: bolder;
+    color: var(--cor-laranja-claro);
     
+}
+.plano-teste-destaque{
+    background-color: var(--cor-laranja);
+    color: var(--cor-preto);
 }
 
 /* Hover (mouse) e focus-visible (teclado) com o mesmo efeito */
@@ -236,7 +241,11 @@ section {
 .pular-teste:focus-visible {
     color: var(--cor-laranja-claro);
 }
-
+/*Mudando a cor da pilula em destaque*/
+.plano-teste-destaque:hover,
+.plano-teste-destaque:focus-visible {
+    color: var(--cor-branco);
+}
 /* Lista sempre à esquerda, mesmo com o card centralizado */
 .lista-beneficios {
     list-style: none;
@@ -248,4 +257,9 @@ section {
 .lista-beneficios strong {
     color: var(--cor-laranja);
 }
-
+/*tirando a margem padrão do navegador*/
+.plano-nome,
+.plano-preco,
+.pano-taxa-imposto {
+    margin: 0;
+}
