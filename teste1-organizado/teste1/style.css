@@ -1,0 +1,239 @@
+/* ==========================================================================
+   ÍNDICE
+   1. Variáveis
+   2. Base (reset e herança)
+   3. Componentes reutilizáveis (botões)
+   4. Topo (header)
+   5. Hero (.teste-gratis)
+   6. Planos (.escolher-assinatura)
+      6.1 Pílula Mensal / Anual
+      6.2 Cards
+      6.3 Conteúdo dos cards
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. VARIÁVEIS
+   Valores definidos uma vez e reutilizados no arquivo inteiro.
+   ========================================================================== */
+:root {
+    --cor-laranja: #ff640a;
+    --cor-laranja-claro: #f58342;
+    --cor-preto: #000000;
+    --cor-branco: #ffffff;
+
+    --padding-padrao: 16px;
+
+    --fonte-arial: Arial, Helvetica, sans-serif;
+}
+
+
+/* ==========================================================================
+   2. BASE
+   Regras que valem para o site todo. Sempre no começo do arquivo.
+   ========================================================================== */
+
+/* width/height passam a incluir padding e borda (a "regra da conta") */
+* {
+    box-sizing: border-box;
+}
+
+/* Herança: cor, fundo e fonte definidos uma vez; todos os filhos herdam */
+body {
+    margin: 0; /* tira a margem padrão do navegador */
+    background-color: var(--cor-preto);
+    color: var(--cor-branco);
+    font-family: var(--fonte-arial);
+}
+
+header,
+main {
+    padding: var(--padding-padrao);
+}
+
+/* Links não herdam a cor do body, então precisam de regra própria */
+a {
+    text-decoration: none;
+    color: var(--cor-branco);
+}
+
+/* Respiro em cima e embaixo de todas as sections (0 nas laterais) */
+section {
+    padding: 180px 0;
+}
+
+
+/* ==========================================================================
+   3. COMPONENTES REUTILIZÁVEIS: BOTÕES
+   Classe base (.botao) + variações (.botao-laranja / .botao-branco).
+   No HTML: class="botao botao-laranja"
+   ========================================================================== */
+
+/* O que TODO botão tem em comum */
+.botao {
+    display: inline-block; /* permite padding de verdade num link */
+    padding: 12px 24px;
+    border-radius: 999px;  /* formato de pílula */
+    font-weight: bold;
+}
+
+/* Variação: preenchido de laranja, texto preto */
+.botao-laranja {
+    background-color: var(--cor-laranja);
+    color: var(--cor-preto);
+    border: 2px solid var(--cor-laranja); /* mesma espessura do botão branco = mesma altura */
+}
+
+/* Variação: transparente com borda branca */
+.botao-branco {
+    background-color: transparent;
+    color: var(--cor-branco);
+    border: 2px solid var(--cor-branco);
+}
+
+
+/* ==========================================================================
+   4. TOPO (header)
+   ========================================================================== */
+
+/* Logo à esquerda, bloco de links à direita */
+.topo {
+    display: flex;
+    justify-content: space-between; /* eixo principal: um em cada ponta */
+    align-items: center;            /* eixo cruzado: mesma altura */
+}
+
+/* LOGIN + INICIAR TESTE GRÁTIS juntinhos */
+.login-teste_gratis {
+    display: flex;
+    gap: 8px;
+}
+
+
+/* ==========================================================================
+   5. HERO (.teste-gratis)
+   ========================================================================== */
+
+/* Tamanho de fonte em cada elemento, e não no pai (evita herança multiplicada) */
+.teste-gratis h2 {
+    font-size: 4rem;
+}
+
+.teste-gratis p {
+    font-size: 1.9rem;
+}
+
+/* O botão do hero é maior que o do header */
+.teste-gratis .botao {
+    font-size: 25px;
+    padding: 30px;
+}
+
+
+/* ==========================================================================
+   6. PLANOS (.escolher-assinatura)
+   ========================================================================== */
+
+.escolher-assinatura {
+    text-align: center; /* herdado por título, pílula e cards */
+}
+
+.escolher-assinatura h2 {
+    font-size: 50px;
+    margin-bottom: 32px;
+}
+
+
+/* ---------- 6.1 Pílula Mensal / Anual ---------- */
+
+/* A caixa com borda laranja em volta dos dois botões */
+.botao-assinatura {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;     /* a caixa fica do tamanho dos botões */
+    margin: 0 auto 42px;    /* centraliza a caixa | 42px embaixo */
+    padding: 5px;
+    border: 2px solid var(--cor-laranja);
+    border-radius: 30px;
+}
+
+/* Padrão: todo botão da pílula começa "desligado" */
+.botao-assinatura button {
+    padding: 12px 24px;
+    border: none;           /* tira a borda padrão do navegador */
+    border-radius: 999px;
+    background-color: transparent;
+    color: var(--cor-branco);
+    font-weight: bold;
+}
+
+/* Exceção: só o botão "ligado" fica laranja (vem DEPOIS do padrão para vencer) */
+.botao-assinatura [aria-pressed="true"] {
+    background-color: var(--cor-laranja);
+    color: var(--cor-preto);
+}
+
+
+/* ---------- 6.2 Cards ---------- */
+
+/* Container flex: os cards lado a lado e com a mesma altura (stretch) */
+.plano-assinatura {
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+}
+
+/* Cada card (Fan e Mega Fan usam a mesma classe) */
+.plano {
+    padding: 16px;
+    border: 2px solid var(--cor-laranja);
+    border-radius: 15px;
+}
+
+
+/* ---------- 6.3 Conteúdo dos cards ---------- */
+
+.plano-nome {
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+.plano-preco {
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+/* Os dois links ocupam cada um a própria linha */
+.plano-teste,
+.pular-teste {
+    display: block;
+    padding: 12px;
+}
+
+/* "Comece Um Teste Grátis": pílula com borda laranja */
+.plano-teste {
+    border: 2px solid var(--cor-laranja);
+    border-radius: 30px;
+}
+
+/* Hover (mouse) e focus-visible (teclado) com o mesmo efeito */
+.plano-teste:hover,
+.plano-teste:focus-visible,
+.pular-teste:hover,
+.pular-teste:focus-visible {
+    color: var(--cor-laranja-claro);
+}
+
+/* Lista sempre à esquerda, mesmo com o card centralizado */
+.lista-beneficios {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+}
+
+/* Destaque laranja só dentro da lista de benefícios */
+.lista-beneficios strong {
+    color: var(--cor-laranja);
+}
