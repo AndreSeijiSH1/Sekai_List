@@ -29,13 +29,13 @@ main{
     color: var(--cor-branco);
 }
 a:hover, a:focus-visible{
-background-color: var(--cor-laranja-claro);
-color: var(--cor-preto);
+
+color: var(--cor-branco);
 }
 
 /* cada section ganha respiro em cima e embaixo, por dentro */
 section {
-    padding: 300px 0;   /* 64px em cima e embaixo | 0 nas laterais */
+    padding: 180px 0;   /* 64px em cima e embaixo | 0 nas laterais */
 }
 
 /*
@@ -62,7 +62,22 @@ justify-content: space-between;
         </section>
 */
 .teste-gratis{
-    text-align: center;
+    text-align: left;
+    margin: 0   
+}
+
+.teste-gratis h2 {
+    font-size: 4rem;      /* o título grande */
+}
+
+.teste-gratis a{
+    font-size: 25px;
+    font-weight: 700;
+    padding: 30px;
+}
+
+.teste-gratis p{
+    font-size: 1.9rem;
 }
 
 /*Personalizando propriedades do botão laranja que ficaria espalhado por todo o site*/
@@ -190,4 +205,29 @@ justify-content: space-between;
     list-style: none;
     text-align: left;
     padding: 0;
+}
+
+.plano-teste{
+    border: 2px solid var(--cor-laranja);
+    padding: 12px;
+    border-radius: 30px;
+    background-color: transparent;
+}
+
+.plano-teste:hover{
+    color: var(--cor-laranja-claro);
+}
+.pular-teste{
+    padding: 12px;
+}
+
+.pular-teste:hover{
+    color: var(--cor-laranja-claro);
+}
+.plano-teste, .pular-teste {
+    display: block;   /* cada link ocupa a própria linha */
+}
+
+strong{
+    color: var(--cor-laranja);
 }
