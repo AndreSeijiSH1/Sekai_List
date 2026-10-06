@@ -200,6 +200,7 @@ justify-content: space-between;
 
 .escolher-assinatura h2{
     margin-bottom: 32px;
+    font-size: 50px;
 }
 .lista-beneficios{
     list-style: none;
@@ -231,3 +232,13 @@ justify-content: space-between;
 strong{
     color: var(--cor-laranja);
 }
+
+.plano-nome{
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+.plano-preco{
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
