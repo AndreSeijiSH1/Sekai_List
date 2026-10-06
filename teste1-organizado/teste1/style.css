@@ -21,6 +21,7 @@
     --cor-laranja-claro: #f58342;
     --cor-preto: #000000;
     --cor-branco: #ffffff;
+    --cor-cinza: #b8adad;
 
     --padding-padrao: 16px;
 
@@ -195,7 +196,7 @@ section {
 
 /* ---------- 6.3 Conteúdo dos cards ---------- */
 
-.plano-nome {
+.plano-nome{
     font-size: 2.5rem;
     font-weight: bolder;
 }
@@ -204,18 +205,28 @@ section {
     font-size: 2.5rem;
     font-weight: bolder;
 }
+.plano-taxa-imposto{
+    font-size: x-small;
+    color: var(--cor-cinza);
+}
 
 /* Os dois links ocupam cada um a própria linha */
 .plano-teste,
-.pular-teste {
+.pular-teste{
     display: block;
     padding: 12px;
 }
 
+.pular-teste{
+    font-weight: bolder;
+    color: var(--cor-cinza);
+}
 /* "Comece Um Teste Grátis": pílula com borda laranja */
 .plano-teste {
     border: 2px solid var(--cor-laranja);
     border-radius: 30px;
+    font-weight: bolder;
+    
 }
 
 /* Hover (mouse) e focus-visible (teclado) com o mesmo efeito */
@@ -237,3 +248,4 @@ section {
 .lista-beneficios strong {
     color: var(--cor-laranja);
 }
+
