@@ -9,6 +9,7 @@
       6.1 Pílula Mensal / Anual
       6.2 Cards
       6.3 Conteúdo dos cards
+    7. Media Query (adaptação para celular)
    ========================================================================== */
 
 
@@ -46,10 +47,11 @@ body {
     color: var(--cor-branco);
     font-family: var(--fonte-arial);
 }
-
-header,
-main {
+header{
     padding: var(--padding-padrao);
+}
+main {
+    padding: 0;
 }
 
 /* Links não herdam a cor do body, então precisam de regra própria */
@@ -289,8 +291,67 @@ section {
 .plano-destaque::before { content: "✨ "; }
 .plano-destaque::after  { content: " ✨"; }
 
+
+
+/* ==========================================================================
+   7. Media Query (adaptação para celular)
+   ========================================================================== */
 @media (max-width: 768px) {
     section {
         padding: 48px 0; 
+    }
+    .botao{
+        white-space: nowrap;
+    }
+    /*================================TOPO=======================================*/
+    .topo{
+        padding-left: 15px;
+    }
+    .topo h1{
+        font-size: 1.7rem;
+    }
+    .login-teste_gratis .botao-laranja{
+        display: none;
+    }
+    /*===============================HERO=======================================*/
+    .teste-gratis{
+        padding-left: 15px;
+        
+    }
+    .teste-gratis h2{
+        font-size: 2.5rem;
+    }
+    .teste-gratis p{
+        font-size: 1rem;
+    }
+    .teste-gratis .botao{
+        font-size: 15px;
+        padding: 16px;
+    }
+    /*==================================PLANOS=======================================*/
+    .plano-assinatura{
+        font-size: 15px;
+        padding-right: var(--padding-padrao);
+        padding-left: var(--padding-padrao);
+        flex-direction: column;
+    }
+    .plano h3{
+        font-size: 25px;
+    }
+    .plano .plano-teste {
+        font-size: 12px;
+    }
+    .plano .pular-teste{
+        font-size: 12px;
+    }
+    .plano .plano-destaque{
+        font-size: 15px;
+    }
+    .teste-gratis h2{
+        max-width: 12ch;
+    }
+    .aviso-assinatura{
+        font-size: 10px;
+        margin: center;
     }
 }
