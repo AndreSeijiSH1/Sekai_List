@@ -110,14 +110,21 @@ section {
     gap: 8px;
 }
 
-
+.teste-gratis {
+    padding-left: 8rem;
+    background-image:
+        linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.2)),  /* por cima: o "vidro" escuro */
+        url("img/black-clover-filler-list-season-2.avif");                         /* embaixo: a imagem */
+    background-size: cover;
+    background-position: center;
+}
 /* ==========================================================================
    5. HERO (.teste-gratis)
    ========================================================================== */
 
 /* Tamanho de fonte em cada elemento, e não no pai (evita herança multiplicada) */
 .teste-gratis h2 {
-    font-size: 4rem;
+    font-size: 7.5rem;
 }
 
 .teste-gratis p {
@@ -152,12 +159,12 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     width: fit-content;     /* a caixa fica do tamanho dos botões */
     margin: 0 auto 42px;    /* centraliza a caixa | 42px embaixo */
-    padding: 5px;
+    padding: 8px;
     border: 2px solid var(--cor-laranja);
-    border-radius: 30px;
+    border-radius: 35px;
 }
 
 /* Padrão: todo botão da pílula começa "desligado" */
@@ -189,7 +196,7 @@ section {
 /* Cada card (Fan e Mega Fan usam a mesma classe) */
 .plano {
     padding: 16px;
-    border: 2px solid var(--cor-laranja);
+    border: 1.5px solid var(--cor-laranja);
     border-radius: 15px;
 }
 
@@ -223,7 +230,7 @@ section {
 }
 /* "Comece Um Teste Grátis": pílula com borda laranja */
 .plano-teste {
-    border: 2px solid var(--cor-laranja);
+    border: 1.5px solid var(--cor-laranja);
     border-radius: 30px;
     font-weight: bolder;
     color: var(--cor-laranja-claro);
@@ -244,7 +251,7 @@ section {
 /*Mudando a cor da pilula em destaque*/
 .plano-teste-destaque:hover,
 .plano-teste-destaque:focus-visible {
-    color: var(--cor-branco);
+    color: var(--cor-preto);
 }
 /* Lista sempre à esquerda, mesmo com o card centralizado */
 .lista-beneficios {
@@ -252,14 +259,38 @@ section {
     text-align: left;
     padding: 0;
 }
-
+.lista-beneficios li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 12px;
+}
 /* Destaque laranja só dentro da lista de benefícios */
 .lista-beneficios strong {
     color: var(--cor-laranja);
 }
+
+.lista-beneficios li::before {
+    content: "✓";
+    color: var(--cor-laranja);
+    position: absolute;
+    left: 0;
+}
 /*tirando a margem padrão do navegador*/
 .plano-nome,
-.plano-preco,
-.pano-taxa-imposto {
+.plano-preco{
     margin: 0;
+}
+
+.plano span{
+    color: var(--cor-cinza);
+    font-weight: bolder;
+}
+
+.plano-destaque::before { content: "✨ "; }
+.plano-destaque::after  { content: " ✨"; }
+
+@media (max-width: 768px) {
+    section {
+        padding: 48px 0; 
+    }
 }
