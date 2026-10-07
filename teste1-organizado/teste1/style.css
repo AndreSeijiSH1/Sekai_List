@@ -126,7 +126,7 @@ section {
 
 /* Tamanho de fonte em cada elemento, e não no pai (evita herança multiplicada) */
 .teste-gratis h2 {
-    font-size: 7.5rem;
+    font-size: 5.5rem;
 }
 
 .teste-gratis p {
@@ -319,7 +319,7 @@ section {
         
     }
     .teste-gratis h2{
-        font-size: 2.5rem;
+        font-size: 3.5rem;
     }
     .teste-gratis p{
         font-size: 1rem;
